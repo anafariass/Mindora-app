@@ -1,11 +1,24 @@
 import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import { useRouter } from 'expo-router'; // Importamos isso para poder "navegar" entre telas
+import { useRouter } from 'expo-router';
+import { useState } from 'react';
 
 export default function LoginScreen() {
   const router = useRouter(); 
 
+  const [nome,setNome] = useState('');
+  const [telefone, setTelefone] = useState('');
+
   const handleLogin = () => {
-    router.replace('/home'); 
+
+    if (!nome || !telefone) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    router.replace({
+      pathname: '/home',
+      params: { nomeDoUsuario : nome, numeroDoUsuario : telefone }
+    });
   };
 
   return (
@@ -18,13 +31,15 @@ export default function LoginScreen() {
       />
 
       <View style={styles.inputContainer}>
-        
       <Text style={styles.namelabel}>Nome</Text>
         <TextInput 
           style={styles.nameInput}
           placeholder="Seu nome completo"
           placeholderTextColor="#888"
-          keyboardType="phone-pad"/>
+          keyboardType="phone-pad"
+          onChangeText={setNome}
+          value={nome}
+        />
 
         <Text style={styles.label}>Número de Telefone</Text>
         <TextInput 
@@ -32,6 +47,8 @@ export default function LoginScreen() {
           placeholder="(99) 99999-9999"
           placeholderTextColor="#888"
           keyboardType="phone-pad"
+          onChangeText={setTelefone}
+          value={telefone}
         />
 
       </View>
@@ -94,7 +111,8 @@ const styles = StyleSheet.create({
   nameInput: {
     backgroundColor: '#333',
     color: '#FFF',
-    padding: 20,
+    marginBottom: 30,
+    padding: 15,
     borderRadius: 10,
     fontSize: 16,
   },

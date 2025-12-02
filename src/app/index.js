@@ -18,6 +18,14 @@ export default function LoginScreen() {
       />
 
       <View style={styles.inputContainer}>
+        
+      <Text style={styles.namelabel}>Nome</Text>
+        <TextInput 
+          style={styles.nameInput}
+          placeholder="Seu nome completo"
+          placeholderTextColor="#888"
+          keyboardType="phone-pad"/>
+
         <Text style={styles.label}>Número de Telefone</Text>
         <TextInput 
           style={styles.input}
@@ -25,6 +33,7 @@ export default function LoginScreen() {
           placeholderTextColor="#888"
           keyboardType="phone-pad"
         />
+
       </View>
 
 
@@ -51,7 +60,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#121212', 
     alignItems: 'center', 
     justifyContent: 'center',
-    padding: 20,
+    padding: 25,
+    gap: 20,
+    
   },
   logo: {
     width: 500,
@@ -61,11 +72,16 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '100%',
-    marginBottom: 25,
+    marginBottom: 20,
   },
   label: {
     color: '#FFF',
-    marginBottom: 8,
+    marginBottom:8,
+    fontSize: 16,
+  },
+  namelabel: {
+    color: '#FFF',
+    marginBottom:8,
     fontSize: 16,
   },
   input: {
@@ -73,6 +89,13 @@ const styles = StyleSheet.create({
     color: '#FFF',
     padding: 15,
     borderRadius: 8,
+    fontSize: 16,
+  },
+  nameInput: {
+    backgroundColor: '#333',
+    color: '#FFF',
+    padding: 20,
+    borderRadius: 10,
     fontSize: 16,
   },
   loginButton: {
@@ -93,8 +116,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   googleButton: {
-    backgroundColor: '#888',
-    width: 50,
+    backgroundColor: '#777',
+    padding: 15,
+    borderRadius: 8,
+    width: 60,
     height: 50,
     borderRadius: 25, 
     justifyContent: 'center',

@@ -5,7 +5,7 @@ import { useLocalSearchParams, useRouter} from 'expo-router';
 
 
 export default function Home() {
-    const { nomeDoUsuario, numeroDoUsuario } = useLocalSearchParams();
+    const { nomeDoUsuario } = useLocalSearchParams();
     const router = useRouter();
 
     const listaDeCarros = [

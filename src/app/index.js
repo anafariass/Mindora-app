@@ -11,37 +11,33 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
       
-      {/* 1. A LOGO PRINCIPAL */}
-      {/* O 'require' busca a imagem dentro da sua pasta assets */}
       <Image 
         source={require('../assets/logo.png')} 
         style={styles.logo}
-        resizeMode="contain" // Faz a imagem caber sem distorcer
+        resizeMode="contain"
       />
 
-      {/* 2. CAIXA DE MENSAGEM (INPUT) */}
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Número de Telefone</Text>
         <TextInput 
           style={styles.input}
           placeholder="(99) 99999-9999"
           placeholderTextColor="#888"
-          keyboardType="phone-pad" // Abre o teclado numérico
+          keyboardType="phone-pad"
         />
       </View>
 
-      {/* BOTÃO DE ENTRAR (Opcional, para testar) */}
+
       <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
         <Text style={styles.loginText}>Entrar</Text>
       </TouchableOpacity>
 
-      {/* 3. BOTÃO GOOGLE */}
       <Text style={styles.googleText}>Ou entre com</Text>
       <TouchableOpacity style={styles.googleButton} onPress={handleLogin}>
-        {/* Usando uma imagem da web para o icone do Google por enquanto */}
         <Image 
-          source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg' }} 
+          source={require('../assets/google.png')} 
           style={styles.googleIcon}
+          resizeMode="contain"
         />
       </TouchableOpacity>
 
@@ -49,23 +45,23 @@ export default function LoginScreen() {
   );
 }
 
-// AQUI É ONDE A MÁGICA VISUAL ACONTECE (CSS em JS)
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // Ocupa a tela toda
-    backgroundColor: '#121212', // Fundo escuro (parece combinar com sua logo preta/vermelha)
-    alignItems: 'center', // Centraliza tudo horizontalmente
-    justifyContent: 'center', // Centraliza tudo verticalmente
+    flex: 1, 
+    backgroundColor: '#121212', 
+    alignItems: 'center', 
+    justifyContent: 'center',
     padding: 20,
   },
   logo: {
-    width: 200,
-    height: 100,
-    marginBottom: 50, // Espaço embaixo da logo
+    width: 500,
+    height: 250,
+    resizeMode: 'contain',
+    marginBottom: 40,
   },
   inputContainer: {
     width: '100%',
-    marginBottom: 30,
+    marginBottom: 25,
   },
   label: {
     color: '#FFF',
@@ -76,11 +72,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
     color: '#FFF',
     padding: 15,
-    borderRadius: 8, // Bordas arredondadas
+    borderRadius: 8,
     fontSize: 16,
   },
   loginButton: {
-    backgroundColor: '#D32F2F', // Vermelho (combinando com a logo DG)
+    backgroundColor: '#D32F2F', 
     padding: 15,
     borderRadius: 8,
     width: '100%',
@@ -97,13 +93,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   googleButton: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#888',
     width: 50,
     height: 50,
-    borderRadius: 25, // Metade da largura/altura faz virar uma bolinha perfeita
+    borderRadius: 25, 
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 5, // Sombra no Android
+    elevation: 5,
   },
   googleIcon: {
     width: 24,

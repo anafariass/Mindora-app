@@ -36,7 +36,6 @@ export default function LoginScreen() {
           style={styles.nameInput}
           placeholder="Seu nome completo"
           placeholderTextColor="#888"
-          keyboardType="phone-pad"
           onChangeText={setNome}
           value={nome}
         />

@@ -25,7 +25,7 @@ export default function LoginScreen() {
     <View style={styles.container}>
       
       <Image 
-        source={require('../assets/logo.png')} 
+        source={require('../assets/images/logo.png')} 
         style={styles.logo}
         resizeMode="contain"
       />
@@ -60,7 +60,7 @@ export default function LoginScreen() {
       <Text style={styles.googleText}>Ou entre com</Text>
       <TouchableOpacity style={styles.googleButton} onPress={handleLogin}>
         <Image 
-          source={require('../assets/google.png')} 
+          source={require('../assets/images/google.png')} 
           style={styles.googleIcon}
           resizeMode="contain"
         />

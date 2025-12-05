@@ -11,7 +11,7 @@ export default function Home() {
         id: 1,
         nome: "Porsche 911 GT3",
         desc: "Esportividade pura com motor aspirado.",
-        img: "https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=500&q=60"
+        img: require('../assets/images/car.webp')
       },
       {
         id: 2,

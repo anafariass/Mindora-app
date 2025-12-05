@@ -17,13 +17,13 @@ export default function Home() {
         id: 2,
         nome: "Lamborghini Huracán",
         desc: "Design agressivo e potência extrema.",
-        img: "https://images.unsplash.com/photo-1544605972-e2a229b7936f?auto=format&fit=crop&w=500&q=60"
+        img: require('../assets/images/car.webp')
       },
       {
         id: 3,
         nome: "Ferrari 488 Spider",
         desc: "O clássico vermelho conversível.",
-        img: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=500&q=60"
+        img: require('../assets/images/car.webp')
       }
     ];
     const handleLogout = () => {
@@ -62,7 +62,7 @@ export default function Home() {
         <ScrollView style={styles.scrollArea}>
           {listaDeCarros.map((carro) => (
             <View key={carro.id} style={styles.card}>
-              <Image source={{ uri: carro.img }} style={styles.cardImage} />
+              <Image source={carro.img} style={styles.cardImage} />
               <View style={styles.cardInfo}>
                 <Text style={styles.cardTitle}>{carro.nome}</Text>
                 <Text style={styles.cardDesc}>{carro.desc}</Text>

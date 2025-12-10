@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Alert } from 'react-native';
 import { useLocalSearchParams, useRouter} from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-
+//roteamento baseado em arquivos prof.
 export default function Home() {
-    const { nomeDoUsuario, numeroDoUsuario } = useLocalSearchParams();
     const router = useRouter();
+    const { nomeDoUsuario, numeroDoUsuario } = useLocalSearchParams();
 
     const listaDeCarros = [
       {
@@ -21,6 +21,23 @@ export default function Home() {
       },
       {
         id: 3,
+        nome: "Golf GTI",
+        desc: "PRONTO",
+        img: require('../assets/images/car3.webp')
+      }, {
+        id: 4,
+        nome: "Sedan Esportivo",
+        desc: "EM PREPARO",
+        img: require('../assets/images/car.webp')
+      },
+      {
+        id: 5,
+        nome: "Lamborghini Huracán",
+        desc: "PARADO",
+        img: require('../assets/images/car2.webp')
+      },
+      {
+        id: 6,
         nome: "Golf GTI",
         desc: "PRONTO",
         img: require('../assets/images/car3.webp')

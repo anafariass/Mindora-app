@@ -9,21 +9,21 @@ export default function Home() {
     const listaDeCarros = [
       {
         id: 1,
-        nome: "Porsche 911 GT3",
-        desc: "Esportividade pura com motor aspirado.",
+        nome: "Sedan Esportivo",
+        desc: "EM PREPARO",
         img: require('../assets/images/car.webp')
       },
       {
         id: 2,
         nome: "Lamborghini Huracán",
-        desc: "Design agressivo e potência extrema.",
-        img: require('../assets/images/car.webp')
+        desc: "PARADO",
+        img: require('../assets/images/car2.webp')
       },
       {
         id: 3,
-        nome: "Ferrari 488 Spider",
-        desc: "O clássico vermelho conversível.",
-        img: require('../assets/images/car.webp')
+        nome: "Golf GTI",
+        desc: "PRONTO",
+        img: require('../assets/images/car3.webp')
       }
     ];
     const handleLogout = () => {
